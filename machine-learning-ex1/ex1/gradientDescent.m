@@ -15,10 +15,15 @@ for iter = 1:num_iters
     %
     % Hint: While debugging, it can be useful to print out the values
     %       of the cost function (computeCost) and gradient here.
-    %
+    %   gradientDescent([1 5; 1 2; 1 4; 1 5], [1 6 4 2] ', [0 0]',0.01, 1000 )
+        H=(X*theta);
+        S1=sum(H-y);;
+        J1=S1/(m);
 
-
-
+        S2=sum((H-y).*X(:,2));
+        J2=S2/(m);
+        theta(1,1)=theta(1,1)-alpha*J1
+        theta(2,1)=theta(2,1)-alpha*J2
 
 
 
